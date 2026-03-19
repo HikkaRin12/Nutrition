@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NutriGain Pro — Твой Диетолог</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="todo-container">
+        <header>
+            <h1><i class="fas fa-weight-hanging"></i> NutriGain</h1>
+            <div class="target-info">Цель: 2600 ккал | Набор массы</div>
+            
+            <div class="stats-row">
+                <div class="chart-container">
+                    <canvas id="macrosChart"></canvas>
+                </div>
+                <div id="rem-values" class="rem-text">Загрузка...</div>
+            </div>
+        </header>
+
+        <div class="card search-card">
+            <div class="search-box">
+                <input type="text" id="todo-input" placeholder="Что съел? (напр. Курица)" autocomplete="off">
+                <div id="suggestions" class="suggestions"></div>
+            </div>
+            <div class="inputs-row">
+                <input type="number" id="cal-input" placeholder="ккал">
+                <input type="number" id="prot-input" placeholder="белок">
+                <button id="add-btn"><i class="fas fa-plus"></i></button>
+            </div>
+        </div>
+
+        <div class="card weight-card">
+            <h4>Прогресс веса (кг)</h4>
+            <canvas id="weightChart"></canvas>
+            <div class="weight-input-group">
+                <input type="number" id="weight-input" step="0.1" placeholder="Вес сегодня">
+                <button onclick="logWeight()">ОК</button>
+            </div>
+        </div>
+
+        <ul id="todo-list"></ul>
+        <button id="clear-btn" class="clear-all">Очистить день</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
